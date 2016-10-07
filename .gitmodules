@@ -1,0 +1,6 @@
+[submodule "RaspberryPi/Alamofire"]
+	path = RaspberryPi/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "RaspberryPi/--force"]
+	path = RaspberryPi/--force
+	url = https://github.com/Alamofire/Alamofire.git

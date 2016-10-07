@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B70D25071DA7D765003EB84D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25061DA7D765003EB84D /* Constants.swift */; };
+		B70D250C1DA7D816003EB84D /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D250B1DA7D816003EB84D /* HttpRequestService.swift */; };
+		B78AC1661DA7C96F00E8C682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */; };
+		B78AC1681DA7C96F00E8C682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AC1671DA7C96F00E8C682 /* ViewController.swift */; };
+		B78AC16B1DA7C97000E8C682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78AC1691DA7C96F00E8C682 /* Main.storyboard */; };
+		B78AC16D1DA7C97000E8C682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78AC16C1DA7C97000E8C682 /* Assets.xcassets */; };
+		B78AC1701DA7C97000E8C682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78AC16E1DA7C97000E8C682 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B78AC1E01DA7CC0500E8C682 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B70D25061DA7D765003EB84D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B70D250B1DA7D816003EB84D /* HttpRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestService.swift; sourceTree = "<group>"; };
+		B78AC1621DA7C96F00E8C682 /* RaspberryPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B78AC1671DA7C96F00E8C682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B78AC16A1DA7C96F00E8C682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B78AC16C1DA7C97000E8C682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B78AC16F1DA7C97000E8C682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B78AC1711DA7C97000E8C682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B78AC15F1DA7C96F00E8C682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B70D25051DA7D74A003EB84D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B70D25061DA7D765003EB84D /* Constants.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		B70D250A1DA7D7DE003EB84D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B70D250B1DA7D816003EB84D /* HttpRequestService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B78AC1591DA7C96F00E8C682 = {
+			isa = PBXGroup;
+			children = (
+				B70D250A1DA7D7DE003EB84D /* Services */,
+				B70D25051DA7D74A003EB84D /* Data */,
+				B78AC1641DA7C96F00E8C682 /* RaspberryPi */,
+				B78AC1631DA7C96F00E8C682 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B78AC1631DA7C96F00E8C682 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B78AC1621DA7C96F00E8C682 /* RaspberryPi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B78AC1641DA7C96F00E8C682 /* RaspberryPi */ = {
+			isa = PBXGroup;
+			children = (
+				B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */,
+				B78AC1671DA7C96F00E8C682 /* ViewController.swift */,
+				B78AC1691DA7C96F00E8C682 /* Main.storyboard */,
+				B78AC16C1DA7C97000E8C682 /* Assets.xcassets */,
+				B78AC16E1DA7C97000E8C682 /* LaunchScreen.storyboard */,
+				B78AC1711DA7C97000E8C682 /* Info.plist */,
+			);
+			path = RaspberryPi;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B78AC1611DA7C96F00E8C682 /* RaspberryPi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78AC1741DA7C97000E8C682 /* Build configuration list for PBXNativeTarget "RaspberryPi" */;
+			buildPhases = (
+				B78AC15E1DA7C96F00E8C682 /* Sources */,
+				B78AC15F1DA7C96F00E8C682 /* Frameworks */,
+				B78AC1601DA7C96F00E8C682 /* Resources */,
+				B78AC1E01DA7CC0500E8C682 /* Embed PlugIns */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaspberryPi;
+			productName = RaspberryPi;
+			productReference = B78AC1621DA7C96F00E8C682 /* RaspberryPi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B78AC15A1DA7C96F00E8C682 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Zaeem Siddiq";
+				TargetAttributes = {
+					B78AC1611DA7C96F00E8C682 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = B78AC15D1DA7C96F00E8C682 /* Build configuration list for PBXProject "RaspberryPi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B78AC1591DA7C96F00E8C682;
+			productRefGroup = B78AC1631DA7C96F00E8C682 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B78AC1611DA7C96F00E8C682 /* RaspberryPi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B78AC1601DA7C96F00E8C682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78AC1701DA7C97000E8C682 /* LaunchScreen.storyboard in Resources */,
+				B78AC16D1DA7C97000E8C682 /* Assets.xcassets in Resources */,
+				B78AC16B1DA7C97000E8C682 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B78AC15E1DA7C96F00E8C682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78AC1681DA7C96F00E8C682 /* ViewController.swift in Sources */,
+				B70D250C1DA7D816003EB84D /* HttpRequestService.swift in Sources */,
+				B70D25071DA7D765003EB84D /* Constants.swift in Sources */,
+				B78AC1661DA7C96F00E8C682 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B78AC1691DA7C96F00E8C682 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B78AC16A1DA7C96F00E8C682 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B78AC16E1DA7C97000E8C682 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B78AC16F1DA7C97000E8C682 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B78AC1721DA7C97000E8C682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B78AC1731DA7C97000E8C682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B78AC1751DA7C97000E8C682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaspberryPi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.org.RaspberryPi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B78AC1761DA7C97000E8C682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaspberryPi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.org.RaspberryPi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B78AC15D1DA7C96F00E8C682 /* Build configuration list for PBXProject "RaspberryPi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78AC1721DA7C97000E8C682 /* Debug */,
+				B78AC1731DA7C97000E8C682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B78AC1741DA7C97000E8C682 /* Build configuration list for PBXNativeTarget "RaspberryPi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78AC1751DA7C97000E8C682 /* Debug */,
+				B78AC1761DA7C97000E8C682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B78AC15A1DA7C96F00E8C682 /* Project object */;
+}
