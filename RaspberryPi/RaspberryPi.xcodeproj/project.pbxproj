@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		B70D25071DA7D765003EB84D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25061DA7D765003EB84D /* Constants.swift */; };
 		B70D250C1DA7D816003EB84D /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D250B1DA7D816003EB84D /* HttpRequestService.swift */; };
+		B70D25121DA9FB0B003EB84D /* SensorValuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25111DA9FB0B003EB84D /* SensorValuesController.swift */; };
+		B70D25141DA9FDAD003EB84D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25131DA9FDAD003EB84D /* SettingsController.swift */; };
+		B70D25161DAA0CA2003EB84D /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25151DAA0CA2003EB84D /* HistoryController.swift */; };
 		B78AC1661DA7C96F00E8C682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */; };
-		B78AC1681DA7C96F00E8C682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AC1671DA7C96F00E8C682 /* ViewController.swift */; };
 		B78AC16B1DA7C97000E8C682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78AC1691DA7C96F00E8C682 /* Main.storyboard */; };
 		B78AC16D1DA7C97000E8C682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78AC16C1DA7C97000E8C682 /* Assets.xcassets */; };
 		B78AC1701DA7C97000E8C682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78AC16E1DA7C97000E8C682 /* LaunchScreen.storyboard */; };
@@ -32,9 +34,11 @@
 /* Begin PBXFileReference section */
 		B70D25061DA7D765003EB84D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B70D250B1DA7D816003EB84D /* HttpRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestService.swift; sourceTree = "<group>"; };
+		B70D25111DA9FB0B003EB84D /* SensorValuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorValuesController.swift; sourceTree = "<group>"; };
+		B70D25131DA9FDAD003EB84D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		B70D25151DAA0CA2003EB84D /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		B78AC1621DA7C96F00E8C682 /* RaspberryPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B78AC1671DA7C96F00E8C682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B78AC16A1DA7C96F00E8C682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B78AC16C1DA7C97000E8C682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78AC16F1DA7C97000E8C682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,9 +72,20 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		B70D25101DA9FAED003EB84D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B70D25111DA9FB0B003EB84D /* SensorValuesController.swift */,
+				B70D25131DA9FDAD003EB84D /* SettingsController.swift */,
+				B70D25151DAA0CA2003EB84D /* HistoryController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B78AC1591DA7C96F00E8C682 = {
 			isa = PBXGroup;
 			children = (
+				B70D25101DA9FAED003EB84D /* ViewControllers */,
 				B70D250A1DA7D7DE003EB84D /* Services */,
 				B70D25051DA7D74A003EB84D /* Data */,
 				B78AC1641DA7C96F00E8C682 /* RaspberryPi */,
@@ -90,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */,
-				B78AC1671DA7C96F00E8C682 /* ViewController.swift */,
 				B78AC1691DA7C96F00E8C682 /* Main.storyboard */,
 				B78AC16C1DA7C97000E8C682 /* Assets.xcassets */,
 				B78AC16E1DA7C97000E8C682 /* LaunchScreen.storyboard */,
@@ -171,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78AC1681DA7C96F00E8C682 /* ViewController.swift in Sources */,
+				B70D25141DA9FDAD003EB84D /* SettingsController.swift in Sources */,
 				B70D250C1DA7D816003EB84D /* HttpRequestService.swift in Sources */,
+				B70D25161DAA0CA2003EB84D /* HistoryController.swift in Sources */,
+				B70D25121DA9FB0B003EB84D /* SensorValuesController.swift in Sources */,
 				B70D25071DA7D765003EB84D /* Constants.swift in Sources */,
 				B78AC1661DA7C96F00E8C682 /* AppDelegate.swift in Sources */,
 			);

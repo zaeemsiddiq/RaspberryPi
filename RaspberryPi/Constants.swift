@@ -21,6 +21,9 @@ extension UIColor {
 }
 
 class Constants {
-
+    static var temperatureThreshold: Int = 0
+    static var notify: Bool = false
+    static var fileName = "file.txt"
+    static var interval: Double = 0.5
     
 }
