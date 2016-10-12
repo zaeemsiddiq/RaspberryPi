@@ -52,9 +52,23 @@ class HistoryController: UIViewController, ServiceDelegate {
                     }
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in // this is the main thread
-                        
-                       
-                        
+                    })
+                    
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            do {
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSArray {
+                    
+                    if let temperatures = jsonResult[0]["values"] as? NSArray {
+                        for temperature in temperatures {
+                            print (Double(temperature["timestamp"]! as! Double))
+                        }
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in // this is the main thread
                     })
                     
                 }

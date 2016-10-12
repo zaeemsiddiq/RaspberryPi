@@ -25,7 +25,7 @@ class SensorValuesController: UIViewController, ServiceDelegate {
         addCircle()
         readFromFile()
         startTimer()
-        stopTimer()
+        //stopTimer()
         
         // Do any additional setup after loading the view.
     }
@@ -97,16 +97,17 @@ class SensorValuesController: UIViewController, ServiceDelegate {
                 
                 //print("\(jsonResult)")
                 if let item = jsonResult["values"] as? [NSObject: AnyObject] {
+                    
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in // this is the main thread
-                        self.labelTemperature.text = String(item["temperature"]!)
-                    })
-                    //print("temp is: \(item["temperature"]!)")
-                    sensorTemp = Int(item["temperature"]! as! String)
-                    if sensorTemp > Constants.temperatureThreshold {
-                        // Notify the user when they have entered a region
-                        let title = "Temperature Notification"
-                        let message = "Temperature value is rising the threshold"
                         
+                        self.labelTemperature.text = String(item["temperature"]!)
+                        self.sensorTemp = Int(String(item["temperature"]!))
+                        print("sensor\(self.sensorTemp) - target: \(Constants.temperatureThreshold)")
+                        if self.sensorTemp > Constants.temperatureThreshold {
+                            // Notify the user when they have entered a region
+                            let title = "Temperature Notification"
+                            let message = "Temperature value is rising the threshold"
+                            
                             if UIApplication.sharedApplication().applicationState == .Active {
                                 // App is active, show an alert
                                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -120,8 +121,11 @@ class SensorValuesController: UIViewController, ServiceDelegate {
                                 notification.alertBody = message
                                 UIApplication.sharedApplication().presentLocalNotificationNow(notification)
                             }
-                        
-                    }
+                            
+                        }
+                    })
+                    //print("temp is: \(item["temperature"]!)")
+                    
                 }
                 
             }
