@@ -86,25 +86,11 @@ class HttpRequestService: NSObject {
         })
     }
     
-    func sendRequest(url: String, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionTask {
-        let requestURL = NSURL(string:"https://\(ipAdd)/\(functionCall!)")!
-        
-        let request = NSMutableURLRequest(URL: requestURL)
-        request.HTTPMethod = "GET"
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler:completionHandler)
-        task.resume()
-        
-        return task
-    }
-    
     func loadedData(data:NSData!,response:NSURLResponse!,err:NSError!){
         if(err != nil){
             print(err?.description)
         }else{
             print(data)
-            
         }
     }
     
