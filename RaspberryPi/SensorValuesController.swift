@@ -237,7 +237,7 @@ class SensorValuesController: UIViewController, ServiceDelegate {
             
             //reading
             do {
-                let text2 = try NSString(contentsOfURL: path, encoding: NSUTF8StringEncoding)
+                let text2 = try NSString(contentsOfURL: path!, encoding: NSUTF8StringEncoding)
                 var tokens = text2.componentsSeparatedByString(",") // ["T:0", "N:0"]
                 var token1 = tokens[0].componentsSeparatedByString(":")
                 var token2 = tokens[1].componentsSeparatedByString(":")

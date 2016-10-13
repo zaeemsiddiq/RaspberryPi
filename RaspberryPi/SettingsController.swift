@@ -67,7 +67,7 @@ class SettingsController: UIViewController {
                 Constants.temperatureThreshold = Int(textThreshold.text!)!
                 Constants.notify = switchNotify.on ? true : false
                 text = "T:\(textThreshold.text!),N:\(switchNotify.on ? "1" : "0")"
-                try text.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
+                try text.writeToURL(path!, atomically: false, encoding: NSUTF8StringEncoding)
             }
             catch {/* error handling here */}
         }
@@ -79,7 +79,7 @@ class SettingsController: UIViewController {
             
             //reading and creating tokens, first token would be a split on the basis of, so that we get 2 values T and N, then splitting on the basis of , so that we again get two values one for N and one for T
             do {
-                let text2 = try NSString(contentsOfURL: path, encoding: NSUTF8StringEncoding)
+                let text2 = try NSString(contentsOfURL: path!, encoding: NSUTF8StringEncoding)
                 var tokens = text2.componentsSeparatedByString(",") // ["T:0", "N:0"]
                 var token1 = tokens[0].componentsSeparatedByString(":")
                 var token2 = tokens[1].componentsSeparatedByString(":")
