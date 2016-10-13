@@ -26,8 +26,20 @@ class SensorValuesController: UIViewController, ServiceDelegate {
         readFromFile()
         startTimer()
         //stopTimer()
-        
         // Do any additional setup after loading the view.
+        getWeatherData();
+        
+    }
+    
+    func getWeatherData(){
+        
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        
+        dispatch_async(backgroundQueue, {
+            let weatherSevice = HttpRequestService(delegate: self)
+            weatherSevice.getCurrentWeather()
+        })
     }
     
     func startTimer() {
@@ -60,8 +72,33 @@ class SensorValuesController: UIViewController, ServiceDelegate {
             parseCurrentTemperature(data)
         } else if functionCall == HttpRequestService.GET_COLOR_READING {
             parseColorData(data)
+        }else if functionCall == HttpRequestService.GET_WEATHER {
+            parseWeatherInfo(data)
         }
     }
+    
+    func parseWeatherInfo(data: NSData){
+    
+        do {
+            if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
+                
+                var main:NSDictionary = jsonResult["main"] as! NSDictionary
+              
+                var currentTemp = Double(main["temp"]! as! Double)
+                
+                print("current weather ---> \(currentTemp)")
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in // this is the main thread
+                    //set the data
+                })
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+
+        
+    }
+    
     
     func parseColorData(data: NSData) {
         do {
