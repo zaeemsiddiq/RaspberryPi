@@ -17,11 +17,14 @@ class HttpRequestService: NSObject {
     var functionCall:String!
     
     let ipAdd: String = "http://118.139.10.151:3000"
+    let weatherAPI: String = "http://api.openweathermap.org/data/2.5/"
     
     static var GET_TEMP: String = "currentTemperature"
     static var GET_TEMP_N: String = "temperature/:num"
     static var GET_TEMP_BY_DATE: String = "temperature/:start/:end"
     static var GET_COLOR_READING: String = "color_reading"
+    static var GET_WEATHER: String = "weather?lat=-37.8825100&lon=145.0228800&appid=a061487dc92e5d3c37f092f10fe966f9&units=metric"
+
 
     
     init(delegate: ServiceDelegate) {
@@ -70,15 +73,13 @@ class HttpRequestService: NSObject {
         
         let queue:NSOperationQueue = NSOperationQueue()
         
-        
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             if data != nil {
                 self.delegate.serviceComplete(data!, functionCall: self.functionCall)
             }
-            
-            
         })
     }
+    
     func sendRequest(url: String, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionTask {
         let requestURL = NSURL(string:"https://\(ipAdd)/\(functionCall!)")!
         
@@ -99,8 +100,32 @@ class HttpRequestService: NSObject {
             print(data)
             
         }
-        
     }
+    
+    
+    func getCurrentWeather() {
+        self.functionCall = HttpRequestService.GET_WEATHER
+        callWeatherService(functionCall)
+    }
+    
+    
+    func callWeatherService(funcCall: String){
+        
+        let url : String = "\(weatherAPI)/\(funcCall)"
+        let request : NSMutableURLRequest = NSMutableURLRequest()
+        request.URL = NSURL(string: url)
+        request.HTTPMethod = "GET"
+        request.timeoutInterval = 60
+        
+        let queue:NSOperationQueue = NSOperationQueue()
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            if data != nil {
+                self.delegate.serviceComplete(data!, functionCall: self.functionCall)
+            }
+        })
+    }
+    
     
     
     
