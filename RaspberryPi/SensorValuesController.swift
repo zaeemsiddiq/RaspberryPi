@@ -102,25 +102,27 @@ class SensorValuesController: UIViewController, ServiceDelegate {
                         
                         self.labelTemperature.text = String(item["temperature"]!)
                         self.sensorTemp = Int(String(item["temperature"]!))
-                        print("sensor\(self.sensorTemp) - target: \(Constants.temperatureThreshold)")
+                        print("sensor\(self.sensorTemp) - target: \(Constants.temperatureThreshold): \(Constants.notify)")
                         if self.sensorTemp > Constants.temperatureThreshold {
                             // Notify the user when they have entered a region
                             let title = "Temperature Notification"
                             let message = "Temperature value is rising the threshold"
-                            
-                            if UIApplication.sharedApplication().applicationState == .Active {
-                                // App is active, show an alert
-                                let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-                                let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                                alertController.addAction(alertAction)
-                                self.presentViewController(alertController, animated: true, completion: nil)
-                            } else {
-                                // App is inactive, show a notification
-                                let notification = UILocalNotification()
-                                notification.alertTitle = title
-                                notification.alertBody = message
-                                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                            if Constants.notify {
+                                if UIApplication.sharedApplication().applicationState == .Active {
+                                    // App is active, show an alert
+                                    let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                                    let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                                    alertController.addAction(alertAction)
+                                    self.presentViewController(alertController, animated: true, completion: nil)
+                                } else {
+                                    // App is inactive, show a notification
+                                    let notification = UILocalNotification()
+                                    notification.alertTitle = title
+                                    notification.alertBody = message
+                                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                                }
                             }
+                            
                             
                         }
                     })

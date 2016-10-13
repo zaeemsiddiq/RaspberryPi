@@ -83,7 +83,7 @@
                             <constraint firstItem="9Uo-g1-2Lm" firstAttribute="leading" secondItem="xvY-ru-0bE" secondAttribute="leadingMargin" id="xvZ-7b-HHz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="v6j-EJ-n2p"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Image" id="v6j-EJ-n2p"/>
                     <connections>
                         <outlet property="switchNotify" destination="3UP-iI-G67" id="2Vp-oL-G0b"/>
                         <outlet property="textThreshold" destination="06n-lB-LgM" id="b3y-Ed-LeL"/>
@@ -151,13 +151,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZr-lP-bIT">
-                                <rect key="frame" x="20" y="213" width="560" height="30"/>
-                                <state key="normal" title="Get By Date"/>
-                                <connections>
-                                    <action selector="getByDate:" destination="D8k-PV-lGV" eventType="touchUpInside" id="EV8-Gt-BB0"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-hg-NhE">
                                 <rect key="frame" x="20" y="252" width="264" height="30"/>
                                 <constraints>
@@ -171,6 +164,13 @@
                                 <state key="normal" title="Get Previous Records"/>
                                 <connections>
                                     <action selector="getLastN:" destination="D8k-PV-lGV" eventType="touchUpInside" id="4fq-g5-1bh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZr-lP-bIT">
+                                <rect key="frame" x="20" y="213" width="560" height="30"/>
+                                <state key="normal" title="Get By Date"/>
+                                <connections>
+                                    <action selector="getByDate:" destination="D8k-PV-lGV" eventType="touchUpInside" id="EV8-Gt-BB0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -363,4 +363,7 @@
             <point key="canvasLocation" x="-484" y="188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="128" height="128"/>
+    </resources>
 </document>

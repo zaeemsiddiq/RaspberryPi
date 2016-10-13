@@ -16,7 +16,7 @@ class HttpRequestService: NSObject {
     var delegate:ServiceDelegate!
     var functionCall:String!
     
-    let ipAdd: String = "http://118.139.10.151:3000"
+    let ipAdd: String = "http://118.139.61.237:3000"
     
     static var GET_TEMP: String = "currentTemperature"
     static var GET_TEMP_N: String = "temperature/:num"
@@ -58,9 +58,7 @@ class HttpRequestService: NSObject {
         callPiNodeService(self.functionCall)
     }
     
-    
     func callPiNodeService(funcCall: String){
-        
         
         let url : String = "\(ipAdd)/\(funcCall)"
         let request : NSMutableURLRequest = NSMutableURLRequest()
