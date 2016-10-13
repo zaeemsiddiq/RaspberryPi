@@ -6,6 +6,13 @@
 //  Copyright © 2016 Zaeem Siddiq. All rights reserved.
 //
 
+
+
+/*
+ This view controller class is responsible to get the values from sensors and the weather api. The basic methodology is in such a way that this class implements timers which fires an event after some interval (definedin the constants class) The moment it gets fired, it insstantiates the HTTP service class obj and calls in the required method. This procedure is done in the background thread so that our main UI does not get blocked. This method also generates notifications and fetches the weather data for CAULFIELD from openweather API.
+ */
+
+
 import UIKit
 
 class SensorValuesController: UIViewController, ServiceDelegate {
@@ -15,10 +22,14 @@ class SensorValuesController: UIViewController, ServiceDelegate {
     @IBOutlet weak var labelBlue: UILabel!
     @IBOutlet weak var labelTemperature: UILabel!
     
+    @IBOutlet weak var labelWeather: UILabel!
     
     let shapeLayer = CAShapeLayer()
     var timer: NSTimer!
+    var popupTimer: NSTimer!
     var sensorTemp: Int!
+    var currentTemp: Double!
+    var showPopup: Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +54,11 @@ class SensorValuesController: UIViewController, ServiceDelegate {
     }
     
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(Constants.interval, target: self, selector: #selector(check), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(Constants.interval, target: self, selector: #selector(callService), userInfo: nil, repeats: true)
+    }
+    
+    func startPopupTimer() {
+        popupTimer = NSTimer.scheduledTimerWithTimeInterval(Constants.popupTimerInterval, target: self, selector: #selector(resetPopupTimer), userInfo: nil, repeats: true)
     }
     
     func stopTimer() {
@@ -52,7 +67,7 @@ class SensorValuesController: UIViewController, ServiceDelegate {
     }
     
     
-    func check() {
+    func callService() {
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
         let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
         dispatch_async(backgroundQueue, {
@@ -62,6 +77,16 @@ class SensorValuesController: UIViewController, ServiceDelegate {
             let rgbService = HttpRequestService(delegate: self)
             rgbService.getColorReading()
         })
+    }
+    
+    func resetPopupTimer() {
+        showPopup = true
+        stopPopupTimer()
+    }
+    
+    func stopPopupTimer() {
+        popupTimer.invalidate()
+        popupTimer=nil
     }
     
     func didReceiveError(error:String) {
@@ -78,16 +103,12 @@ class SensorValuesController: UIViewController, ServiceDelegate {
     }
     
     func parseWeatherInfo(data: NSData){
-    
         do {
             if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
                 
-                var main:NSDictionary = jsonResult["main"] as! NSDictionary
-              
-                var currentTemp = Double(main["temp"]! as! Double)
-                
+                let main:NSDictionary = jsonResult["main"] as! NSDictionary
+                currentTemp = Double(main["temp"]! as! Double)
                 print("current weather ---> \(currentTemp)")
-                
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in // this is the main thread
                     //set the data
                 })
@@ -132,6 +153,7 @@ class SensorValuesController: UIViewController, ServiceDelegate {
         do {
             if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary {
                 
+                
                 //print("\(jsonResult)")
                 if let item = jsonResult["values"] as? [NSObject: AnyObject] {
                     
@@ -139,29 +161,30 @@ class SensorValuesController: UIViewController, ServiceDelegate {
                         
                         self.labelTemperature.text = String(item["temperature"]!)
                         self.sensorTemp = Int(String(item["temperature"]!))
-                        print("sensor\(self.sensorTemp) - target: \(Constants.temperatureThreshold): \(Constants.notify)")
+                        
+                        
+                        
+                        
                         if self.sensorTemp > Constants.temperatureThreshold {
                             // Notify the user when they have entered a region
                             let title = "Temperature Notification"
                             let message = "Temperature value is rising the threshold"
-                            if Constants.notify {
-                                if UIApplication.sharedApplication().applicationState == .Active {
-                                    // App is active, show an alert
-                                    let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-                                    let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                                    alertController.addAction(alertAction)
-                                    self.presentViewController(alertController, animated: true, completion: nil)
-                                } else {
-                                    // App is inactive, show a notification
-                                    let notification = UILocalNotification()
-                                    notification.alertTitle = title
-                                    notification.alertBody = message
-                                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-                                }
+                            self.generateNotification(title, message: message)
+                        } else if self.currentTemp != nil {
+                            
+                            
+                            var currentDifference: Double = (self.currentTemp - Double(self.sensorTemp))
+                            if currentDifference < 0 {
+                                currentDifference *= -1
                             }
                             
-                            
-                        }
+                            print("sensor\(self.sensorTemp) - target: \(Constants.temperatureThreshold): \(Constants.notify): \(currentDifference)")
+                            if currentDifference > Constants.weatherDifference {
+                                    let title = "Temperature Notification"
+                                    let message = "Abnormal Behaviour found between car and weather temperature"
+                                    self.generateNotification(title, message: message)
+                                }
+                            }
                     })
                     //print("temp is: \(item["temperature"]!)")
                     
@@ -170,6 +193,27 @@ class SensorValuesController: UIViewController, ServiceDelegate {
             }
         } catch let error as NSError {
             print(error.localizedDescription)
+        }
+    }
+    
+    // this method generates a notification on.
+    func generateNotification(title: String, message: String) {
+        if Constants.notify && showPopup {
+            showPopup = false
+            startPopupTimer()
+            if UIApplication.sharedApplication().applicationState == .Active {
+                // App is active, show an alert
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(alertAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                // App is inactive, show a notification
+                let notification = UILocalNotification()
+                notification.alertTitle = title
+                notification.alertBody = message
+                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            }
         }
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+// code taken from http://www.codingexplorer.com/create-uicolor-swift/ , converts rgb to  a UI COLOR
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         let newRed = CGFloat(red)/255
@@ -25,5 +25,6 @@ class Constants {
     static var notify: Bool = true
     static var fileName = "file.txt"
     static var interval: Double = 0.5
-    
+    static var popupTimerInterval: Double = 10 // seconds
+    static var weatherDifference: Double = 10
 }

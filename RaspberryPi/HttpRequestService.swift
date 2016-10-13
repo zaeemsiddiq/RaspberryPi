@@ -16,7 +16,7 @@ class HttpRequestService: NSObject {
     var delegate:ServiceDelegate!
     var functionCall:String!
     
-    let ipAdd: String = "http://118.139.10.151:3000"
+    let ipAdd: String = "http://118.139.61.237:3000"
     let weatherAPI: String = "http://api.openweathermap.org/data/2.5/"
     
     static var GET_TEMP: String = "currentTemperature"
