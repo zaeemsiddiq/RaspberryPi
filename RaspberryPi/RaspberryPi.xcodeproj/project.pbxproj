@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9875B2D31DAF6E69001CC7F7 /* sensor_tab_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2D21DAF6E69001CC7F7 /* sensor_tab_icon.svg */; };
-		9875B2D71DAF771B001CC7F7 /* sensor_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2D41DAF771B001CC7F7 /* sensor_1x.png */; };
-		9875B2D81DAF771B001CC7F7 /* sensor_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2D51DAF771B001CC7F7 /* sensor_2x.png */; };
-		9875B2D91DAF771B001CC7F7 /* sensor_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2D61DAF771B001CC7F7 /* sensor_3x.png */; };
-		9875B2DD1DAF7897001CC7F7 /* history_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2DA1DAF7897001CC7F7 /* history_1x.png */; };
-		9875B2DE1DAF7897001CC7F7 /* history_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2DB1DAF7897001CC7F7 /* history_2x.png */; };
-		9875B2DF1DAF7897001CC7F7 /* history_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2DC1DAF7897001CC7F7 /* history_3x.png */; };
-		9875B2E31DAF7C41001CC7F7 /* settings_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2E01DAF7C41001CC7F7 /* settings_1x.png */; };
-		9875B2E41DAF7C41001CC7F7 /* settings_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2E11DAF7C41001CC7F7 /* settings_2x.png */; };
-		9875B2E51DAF7C41001CC7F7 /* settings_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9875B2E21DAF7C41001CC7F7 /* settings_3x.png */; };
 		B70D25071DA7D765003EB84D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25061DA7D765003EB84D /* Constants.swift */; };
 		B70D250C1DA7D816003EB84D /* HttpRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D250B1DA7D816003EB84D /* HttpRequestService.swift */; };
 		B70D25121DA9FB0B003EB84D /* SensorValuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25111DA9FB0B003EB84D /* SensorValuesController.swift */; };
 		B70D25141DA9FDAD003EB84D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25131DA9FDAD003EB84D /* SettingsController.swift */; };
 		B70D25161DAA0CA2003EB84D /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D25151DAA0CA2003EB84D /* HistoryController.swift */; };
+		B76554E41DAF842A004EF5D5 /* history_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554DB1DAF842A004EF5D5 /* history_1x.png */; };
+		B76554E51DAF842A004EF5D5 /* history_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554DC1DAF842A004EF5D5 /* history_2x.png */; };
+		B76554E61DAF842A004EF5D5 /* history_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554DD1DAF842A004EF5D5 /* history_3x.png */; };
+		B76554E71DAF842A004EF5D5 /* sensor_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554DE1DAF842A004EF5D5 /* sensor_1x.png */; };
+		B76554E81DAF842A004EF5D5 /* sensor_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554DF1DAF842A004EF5D5 /* sensor_2x.png */; };
+		B76554E91DAF842A004EF5D5 /* settings_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554E01DAF842A004EF5D5 /* settings_1x.png */; };
+		B76554EA1DAF842A004EF5D5 /* settings_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554E11DAF842A004EF5D5 /* settings_2x.png */; };
+		B76554EB1DAF842A004EF5D5 /* settings_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554E21DAF842A004EF5D5 /* settings_3x.png */; };
+		B76554EC1DAF842A004EF5D5 /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = B76554E31DAF842A004EF5D5 /* temp.png */; };
 		B78AC1661DA7C96F00E8C682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */; };
 		B78AC16B1DA7C97000E8C682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78AC1691DA7C96F00E8C682 /* Main.storyboard */; };
 		B78AC16D1DA7C97000E8C682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78AC16C1DA7C97000E8C682 /* Assets.xcassets */; };
@@ -42,21 +41,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9875B2D21DAF6E69001CC7F7 /* sensor_tab_icon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sensor_tab_icon.svg; path = images/sensor_tab_icon.svg; sourceTree = "<group>"; };
-		9875B2D41DAF771B001CC7F7 /* sensor_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sensor_1x.png; path = images/sensor_1x.png; sourceTree = "<group>"; };
-		9875B2D51DAF771B001CC7F7 /* sensor_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sensor_2x.png; path = images/sensor_2x.png; sourceTree = "<group>"; };
-		9875B2D61DAF771B001CC7F7 /* sensor_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sensor_3x.png; path = images/sensor_3x.png; sourceTree = "<group>"; };
-		9875B2DA1DAF7897001CC7F7 /* history_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_1x.png; path = images/history_1x.png; sourceTree = "<group>"; };
-		9875B2DB1DAF7897001CC7F7 /* history_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_2x.png; path = images/history_2x.png; sourceTree = "<group>"; };
-		9875B2DC1DAF7897001CC7F7 /* history_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_3x.png; path = images/history_3x.png; sourceTree = "<group>"; };
-		9875B2E01DAF7C41001CC7F7 /* settings_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_1x.png; path = images/settings_1x.png; sourceTree = "<group>"; };
-		9875B2E11DAF7C41001CC7F7 /* settings_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_2x.png; path = images/settings_2x.png; sourceTree = "<group>"; };
-		9875B2E21DAF7C41001CC7F7 /* settings_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_3x.png; path = images/settings_3x.png; sourceTree = "<group>"; };
 		B70D25061DA7D765003EB84D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B70D250B1DA7D816003EB84D /* HttpRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestService.swift; sourceTree = "<group>"; };
 		B70D25111DA9FB0B003EB84D /* SensorValuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorValuesController.swift; sourceTree = "<group>"; };
 		B70D25131DA9FDAD003EB84D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B70D25151DAA0CA2003EB84D /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		B76554DB1DAF842A004EF5D5 /* history_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_1x.png; path = RaspberryPi/images/history_1x.png; sourceTree = "<group>"; };
+		B76554DC1DAF842A004EF5D5 /* history_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_2x.png; path = RaspberryPi/images/history_2x.png; sourceTree = "<group>"; };
+		B76554DD1DAF842A004EF5D5 /* history_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history_3x.png; path = RaspberryPi/images/history_3x.png; sourceTree = "<group>"; };
+		B76554DE1DAF842A004EF5D5 /* sensor_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sensor_1x.png; path = RaspberryPi/images/sensor_1x.png; sourceTree = "<group>"; };
+		B76554DF1DAF842A004EF5D5 /* sensor_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sensor_2x.png; path = RaspberryPi/images/sensor_2x.png; sourceTree = "<group>"; };
+		B76554E01DAF842A004EF5D5 /* settings_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_1x.png; path = RaspberryPi/images/settings_1x.png; sourceTree = "<group>"; };
+		B76554E11DAF842A004EF5D5 /* settings_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_2x.png; path = RaspberryPi/images/settings_2x.png; sourceTree = "<group>"; };
+		B76554E21DAF842A004EF5D5 /* settings_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_3x.png; path = RaspberryPi/images/settings_3x.png; sourceTree = "<group>"; };
+		B76554E31DAF842A004EF5D5 /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = temp.png; path = RaspberryPi/images/temp.png; sourceTree = "<group>"; };
 		B78AC1621DA7C96F00E8C682 /* RaspberryPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78AC1651DA7C96F00E8C682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B78AC16A1DA7C96F00E8C682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,16 +77,15 @@
 		9875B2D11DAF6E33001CC7F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				9875B2E01DAF7C41001CC7F7 /* settings_1x.png */,
-				9875B2E11DAF7C41001CC7F7 /* settings_2x.png */,
-				9875B2E21DAF7C41001CC7F7 /* settings_3x.png */,
-				9875B2DA1DAF7897001CC7F7 /* history_1x.png */,
-				9875B2DB1DAF7897001CC7F7 /* history_2x.png */,
-				9875B2DC1DAF7897001CC7F7 /* history_3x.png */,
-				9875B2D41DAF771B001CC7F7 /* sensor_1x.png */,
-				9875B2D51DAF771B001CC7F7 /* sensor_2x.png */,
-				9875B2D61DAF771B001CC7F7 /* sensor_3x.png */,
-				9875B2D21DAF6E69001CC7F7 /* sensor_tab_icon.svg */,
+				B76554DB1DAF842A004EF5D5 /* history_1x.png */,
+				B76554DC1DAF842A004EF5D5 /* history_2x.png */,
+				B76554DD1DAF842A004EF5D5 /* history_3x.png */,
+				B76554DE1DAF842A004EF5D5 /* sensor_1x.png */,
+				B76554DF1DAF842A004EF5D5 /* sensor_2x.png */,
+				B76554E01DAF842A004EF5D5 /* settings_1x.png */,
+				B76554E11DAF842A004EF5D5 /* settings_2x.png */,
+				B76554E21DAF842A004EF5D5 /* settings_3x.png */,
+				B76554E31DAF842A004EF5D5 /* temp.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -210,19 +207,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9875B2E41DAF7C41001CC7F7 /* settings_2x.png in Resources */,
-				9875B2D91DAF771B001CC7F7 /* sensor_3x.png in Resources */,
-				9875B2DF1DAF7897001CC7F7 /* history_3x.png in Resources */,
+				B76554EA1DAF842A004EF5D5 /* settings_2x.png in Resources */,
 				B78AC1701DA7C97000E8C682 /* LaunchScreen.storyboard in Resources */,
-				9875B2D71DAF771B001CC7F7 /* sensor_1x.png in Resources */,
-				9875B2DD1DAF7897001CC7F7 /* history_1x.png in Resources */,
-				9875B2D31DAF6E69001CC7F7 /* sensor_tab_icon.svg in Resources */,
-				9875B2D81DAF771B001CC7F7 /* sensor_2x.png in Resources */,
-				9875B2E51DAF7C41001CC7F7 /* settings_3x.png in Resources */,
-				9875B2DE1DAF7897001CC7F7 /* history_2x.png in Resources */,
-				9875B2E31DAF7C41001CC7F7 /* settings_1x.png in Resources */,
+				B76554E61DAF842A004EF5D5 /* history_3x.png in Resources */,
+				B76554E51DAF842A004EF5D5 /* history_2x.png in Resources */,
+				B76554E81DAF842A004EF5D5 /* sensor_2x.png in Resources */,
+				B76554EC1DAF842A004EF5D5 /* temp.png in Resources */,
 				B78AC16D1DA7C97000E8C682 /* Assets.xcassets in Resources */,
+				B76554E71DAF842A004EF5D5 /* sensor_1x.png in Resources */,
+				B76554E91DAF842A004EF5D5 /* settings_1x.png in Resources */,
+				B76554EB1DAF842A004EF5D5 /* settings_3x.png in Resources */,
 				B78AC16B1DA7C97000E8C682 /* Main.storyboard in Resources */,
+				B76554E41DAF842A004EF5D5 /* history_1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,10 +38,11 @@ class SensorValuesController: UIViewController, ServiceDelegate {
         startTimer()
         //stopTimer()
         // Do any additional setup after loading the view.
-        getWeatherData();
+        getWeatherData()
         
     }
     
+    // calls http service in the background and gets weather data
     func getWeatherData(){
         
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND

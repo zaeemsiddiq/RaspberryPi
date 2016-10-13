@@ -83,7 +83,7 @@
                             <constraint firstItem="9Uo-g1-2Lm" firstAttribute="leading" secondItem="xvY-ru-0bE" secondAttribute="leadingMargin" id="xvZ-7b-HHz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Image" id="v6j-EJ-n2p"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="tab_bar_settings" id="v6j-EJ-n2p"/>
                     <connections>
                         <outlet property="switchNotify" destination="3UP-iI-G67" id="2Vp-oL-G0b"/>
                         <outlet property="textThreshold" destination="06n-lB-LgM" id="b3y-Ed-LeL"/>
@@ -206,7 +206,7 @@
                             <constraint firstItem="x70-Gc-MhQ" firstAttribute="top" secondItem="xtp-nX-TIZ" secondAttribute="bottom" constant="16" id="zvq-ZO-f7x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Temperature History" id="2Sj-Ex-SzG"/>
+                    <tabBarItem key="tabBarItem" title="Temperature History" image="tab_bar_history" id="2Sj-Ex-SzG"/>
                     <connections>
                         <outlet property="fromDate" destination="x70-Gc-MhQ" id="rhy-DD-OO3"/>
                         <outlet property="textLastN" destination="o4W-hg-NhE" id="vI4-aO-VMJ"/>
@@ -292,15 +292,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-0W-9eJ">
-                                <rect key="frame" x="362" y="359" width="48" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="BSj-wW-kxt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensor Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frJ-j5-Lvo">
                                 <rect key="frame" x="20" y="28" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -315,6 +306,15 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjG-gm-ZtZ">
                                 <rect key="frame" x="362" y="398" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-0W-9eJ">
+                                <rect key="frame" x="362" y="359" width="48" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="BSj-wW-kxt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -344,7 +344,7 @@
                             <constraint firstItem="8pT-G4-tk7" firstAttribute="baseline" secondItem="Q4w-TD-6pv" secondAttribute="baseline" id="zsx-Rz-ecb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sensors" id="TtP-fe-b07"/>
+                    <tabBarItem key="tabBarItem" title="Sensors" image="tab_bar_sensor" id="TtP-fe-b07"/>
                     <connections>
                         <outlet property="labelBlue" destination="9sP-ry-gkp" id="cE3-ki-cpx"/>
                         <outlet property="labelGreen" destination="bIt-NA-plr" id="2Zy-dO-ROc"/>
@@ -378,6 +378,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="128" height="128"/>
+        <image name="tab_bar_history" width="25" height="25"/>
+        <image name="tab_bar_sensor" width="25" height="25"/>
+        <image name="tab_bar_settings" width="25" height="25"/>
     </resources>
 </document>
